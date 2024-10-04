@@ -1,0 +1,26 @@
+{
+  "name": "@darkle/fancybox",
+  "version": "0.0.0",
+  "private": true,
+  "prettier": "@flarum/prettier-config",
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
+    "@flarum/prettier-config": "^1.0.0",
+    "flarum-webpack-config": "^2.0.2",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "prettier": "^3.3.3",
+    "style-loader": "^4.0.0",
+    "webpack-merge": "^6.0.1"
+  },
+  "scripts": {
+    "dev": "npm run build:css && webpack --mode development --watch",
+    "build": "npm run build:css && webpack --mode production",
+    "format": "prettier --write src",
+    "format-check": "prettier --check src",
+    "build:css": "cp ./node_modules/@fancyapps/ui/dist/fancybox/fancybox.css ../less/fancybox.css && cp ./node_modules/@fancyapps/ui/dist/carousel/carousel.css ../less/carousel.css"
+  }
+}
